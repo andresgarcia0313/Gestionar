@@ -10,7 +10,6 @@ services:
       REDMINE_DB_DATABASE: /usr/src/redmine/files/sqlite/redmine.db
       TZ: America/Bogota
     volumes:
-      - ./data/redmine:/usr/src/redmine
       - ./data/files:/usr/src/redmine/files
       - ./data/themes/PurpleMine2:/usr/src/redmine/public/themes/PurpleMine2
     mem_limit: 100m
