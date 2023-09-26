@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  redmine:
+    image: redmine:5.0.5-alpine
+    restart: always
+    ports:
+      - 8080:3000
+    environment:
+      REDMINE_DB_ADAPTER: sqlite3
+      REDMINE_DB_DATABASE: /usr/src/redmine/files/sqlite/redmine.db
+      TZ: America/Bogota
+    volumes:
+      - ./data/redmine:/usr/src/redmine
+      - ./data/files:/usr/src/redmine/files
+      - ./data/themes/PurpleMine2:/usr/src/redmine/public/themes/PurpleMine2
+    mem_limit: 100m
+#admin/admin
