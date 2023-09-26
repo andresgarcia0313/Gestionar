@@ -4,7 +4,7 @@ services:
     image: redmine:5.0.5-alpine
     restart: always
     ports:
-      - 8080:3000
+      - ${PORT}:3000
     environment:
       REDMINE_DB_ADAPTER: sqlite3
       REDMINE_DB_DATABASE: /usr/src/redmine/files/sqlite/redmine.db
